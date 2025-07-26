@@ -24,38 +24,38 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B31D851F2E1A632900677FAA /* oakOS-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "oakOS-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B31D85352E1A632B00677FAA /* oakOS-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "oakOS-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B31D853F2E1A632B00677FAA /* oakOS-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "oakOS-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B31D851F2E1A632900677FAA /* Milo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Milo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B31D85352E1A632B00677FAA /* Milo-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Milo-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B31D853F2E1A632B00677FAA /* Milo-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Milo-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		B31D85472E1A632B00677FAA /* Exceptions for "oakOS-iOS" folder in "oakOS-iOS" target */ = {
+		B31D85472E1A632B00677FAA /* Exceptions for "Milo-iOS" folder in "Milo-iOS" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = B31D851E2E1A632900677FAA /* oakOS-iOS */;
+			target = B31D851E2E1A632900677FAA /* Milo-iOS */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		B31D85212E1A632900677FAA /* oakOS-iOS */ = {
+		B31D85212E1A632900677FAA /* Milo-iOS */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				B31D85472E1A632B00677FAA /* Exceptions for "oakOS-iOS" folder in "oakOS-iOS" target */,
+				B31D85472E1A632B00677FAA /* Exceptions for "Milo-iOS" folder in "Milo-iOS" target */,
 			);
-			path = "oakOS-iOS";
+			path = "Milo-iOS";
 			sourceTree = "<group>";
 		};
-		B31D85382E1A632B00677FAA /* oakOS-iOSTests */ = {
+		B31D85382E1A632B00677FAA /* Milo-iOSTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "oakOS-iOSTests";
+			path = "Milo-iOSTests";
 			sourceTree = "<group>";
 		};
-		B31D85422E1A632B00677FAA /* oakOS-iOSUITests */ = {
+		B31D85422E1A632B00677FAA /* Milo-iOSUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "oakOS-iOSUITests";
+			path = "Milo-iOSUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -88,9 +88,9 @@
 		B31D85162E1A632900677FAA = {
 			isa = PBXGroup;
 			children = (
-				B31D85212E1A632900677FAA /* oakOS-iOS */,
-				B31D85382E1A632B00677FAA /* oakOS-iOSTests */,
-				B31D85422E1A632B00677FAA /* oakOS-iOSUITests */,
+				B31D85212E1A632900677FAA /* Milo-iOS */,
+				B31D85382E1A632B00677FAA /* Milo-iOSTests */,
+				B31D85422E1A632B00677FAA /* Milo-iOSUITests */,
 				B31D85202E1A632900677FAA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,9 +98,9 @@
 		B31D85202E1A632900677FAA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B31D851F2E1A632900677FAA /* oakOS-iOS.app */,
-				B31D85352E1A632B00677FAA /* oakOS-iOSTests.xctest */,
-				B31D853F2E1A632B00677FAA /* oakOS-iOSUITests.xctest */,
+				B31D851F2E1A632900677FAA /* Milo-iOS.app */,
+				B31D85352E1A632B00677FAA /* Milo-iOSTests.xctest */,
+				B31D853F2E1A632B00677FAA /* Milo-iOSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,9 +108,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B31D851E2E1A632900677FAA /* oakOS-iOS */ = {
+		B31D851E2E1A632900677FAA /* Milo-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B31D85482E1A632B00677FAA /* Build configuration list for PBXNativeTarget "oakOS-iOS" */;
+			buildConfigurationList = B31D85482E1A632B00677FAA /* Build configuration list for PBXNativeTarget "Milo-iOS" */;
 			buildPhases = (
 				B31D851B2E1A632900677FAA /* Sources */,
 				B31D851C2E1A632900677FAA /* Frameworks */,
@@ -121,18 +121,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				B31D85212E1A632900677FAA /* oakOS-iOS */,
+				B31D85212E1A632900677FAA /* Milo-iOS */,
 			);
-			name = "oakOS-iOS";
+			name = "Milo-iOS";
 			packageProductDependencies = (
 			);
 			productName = "oakOS-iOS";
-			productReference = B31D851F2E1A632900677FAA /* oakOS-iOS.app */;
+			productReference = B31D851F2E1A632900677FAA /* Milo-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B31D85342E1A632B00677FAA /* oakOS-iOSTests */ = {
+		B31D85342E1A632B00677FAA /* Milo-iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B31D854D2E1A632B00677FAA /* Build configuration list for PBXNativeTarget "oakOS-iOSTests" */;
+			buildConfigurationList = B31D854D2E1A632B00677FAA /* Build configuration list for PBXNativeTarget "Milo-iOSTests" */;
 			buildPhases = (
 				B31D85312E1A632B00677FAA /* Sources */,
 				B31D85322E1A632B00677FAA /* Frameworks */,
@@ -144,18 +144,18 @@
 				B31D85372E1A632B00677FAA /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				B31D85382E1A632B00677FAA /* oakOS-iOSTests */,
+				B31D85382E1A632B00677FAA /* Milo-iOSTests */,
 			);
-			name = "oakOS-iOSTests";
+			name = "Milo-iOSTests";
 			packageProductDependencies = (
 			);
 			productName = "oakOS-iOSTests";
-			productReference = B31D85352E1A632B00677FAA /* oakOS-iOSTests.xctest */;
+			productReference = B31D85352E1A632B00677FAA /* Milo-iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B31D853E2E1A632B00677FAA /* oakOS-iOSUITests */ = {
+		B31D853E2E1A632B00677FAA /* Milo-iOSUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B31D85502E1A632B00677FAA /* Build configuration list for PBXNativeTarget "oakOS-iOSUITests" */;
+			buildConfigurationList = B31D85502E1A632B00677FAA /* Build configuration list for PBXNativeTarget "Milo-iOSUITests" */;
 			buildPhases = (
 				B31D853B2E1A632B00677FAA /* Sources */,
 				B31D853C2E1A632B00677FAA /* Frameworks */,
@@ -167,13 +167,13 @@
 				B31D85412E1A632B00677FAA /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				B31D85422E1A632B00677FAA /* oakOS-iOSUITests */,
+				B31D85422E1A632B00677FAA /* Milo-iOSUITests */,
 			);
-			name = "oakOS-iOSUITests";
+			name = "Milo-iOSUITests";
 			packageProductDependencies = (
 			);
 			productName = "oakOS-iOSUITests";
-			productReference = B31D853F2E1A632B00677FAA /* oakOS-iOSUITests.xctest */;
+			productReference = B31D853F2E1A632B00677FAA /* Milo-iOSUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -199,7 +199,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B31D851A2E1A632900677FAA /* Build configuration list for PBXProject "oakOS-iOS" */;
+			buildConfigurationList = B31D851A2E1A632900677FAA /* Build configuration list for PBXProject "Milo-iOS" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -213,9 +213,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B31D851E2E1A632900677FAA /* oakOS-iOS */,
-				B31D85342E1A632B00677FAA /* oakOS-iOSTests */,
-				B31D853E2E1A632B00677FAA /* oakOS-iOSUITests */,
+				B31D851E2E1A632900677FAA /* Milo-iOS */,
+				B31D85342E1A632B00677FAA /* Milo-iOSTests */,
+				B31D853E2E1A632B00677FAA /* Milo-iOSUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -271,12 +271,12 @@
 /* Begin PBXTargetDependency section */
 		B31D85372E1A632B00677FAA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B31D851E2E1A632900677FAA /* oakOS-iOS */;
+			target = B31D851E2E1A632900677FAA /* Milo-iOS */;
 			targetProxy = B31D85362E1A632B00677FAA /* PBXContainerItemProxy */;
 		};
 		B31D85412E1A632B00677FAA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B31D851E2E1A632900677FAA /* oakOS-iOS */;
+			target = B31D851E2E1A632900677FAA /* Milo-iOS */;
 			targetProxy = B31D85402E1A632B00677FAA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -291,8 +291,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7C2S8B9978;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "oakOS-iOS/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Sonoak;
+				INFOPLIST_FILE = "Milo-iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Milo;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -303,7 +303,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "leodurand.oakOS-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "leodurand.Milo-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -320,8 +320,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7C2S8B9978;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "oakOS-iOS/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Sonoak;
+				INFOPLIST_FILE = "Milo-iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Milo;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -332,7 +332,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "leodurand.oakOS-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "leodurand.Milo-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -471,12 +471,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "leodurand.oakOS-iOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "leodurand.Milo-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/oakOS-iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/oakOS-iOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Milo-iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Milo-iOS";
 			};
 			name = Debug;
 		};
@@ -490,12 +490,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "leodurand.oakOS-iOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "leodurand.Milo-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/oakOS-iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/oakOS-iOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Milo-iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Milo-iOS";
 			};
 			name = Release;
 		};
@@ -507,7 +507,7 @@
 				DEVELOPMENT_TEAM = 7C2S8B9978;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "leodurand.oakOS-iOSUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "leodurand.Milo-iOSUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -524,7 +524,7 @@
 				DEVELOPMENT_TEAM = 7C2S8B9978;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "leodurand.oakOS-iOSUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "leodurand.Milo-iOSUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -536,7 +536,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B31D851A2E1A632900677FAA /* Build configuration list for PBXProject "oakOS-iOS" */ = {
+		B31D851A2E1A632900677FAA /* Build configuration list for PBXProject "Milo-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B31D854B2E1A632B00677FAA /* Debug */,
@@ -545,7 +545,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B31D85482E1A632B00677FAA /* Build configuration list for PBXNativeTarget "oakOS-iOS" */ = {
+		B31D85482E1A632B00677FAA /* Build configuration list for PBXNativeTarget "Milo-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B31D85492E1A632B00677FAA /* Debug */,
@@ -554,7 +554,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B31D854D2E1A632B00677FAA /* Build configuration list for PBXNativeTarget "oakOS-iOSTests" */ = {
+		B31D854D2E1A632B00677FAA /* Build configuration list for PBXNativeTarget "Milo-iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B31D854E2E1A632B00677FAA /* Debug */,
@@ -563,7 +563,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B31D85502E1A632B00677FAA /* Build configuration list for PBXNativeTarget "oakOS-iOSUITests" */ = {
+		B31D85502E1A632B00677FAA /* Build configuration list for PBXNativeTarget "Milo-iOSUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B31D85512E1A632B00677FAA /* Debug */,
