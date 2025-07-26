@@ -292,6 +292,7 @@
 				DEVELOPMENT_TEAM = 7C2S8B9978;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "oakOS-iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Sonoak;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -320,6 +321,7 @@
 				DEVELOPMENT_TEAM = 7C2S8B9978;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "oakOS-iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Sonoak;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
