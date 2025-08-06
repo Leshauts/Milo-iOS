@@ -1,5 +1,5 @@
 <picture>
-<img style="pointer-events:none" src="https://leodurand.com/_autres/cover-milo-ios-github@2x.png" />
+<img style="pointer-events:none" src="https://leodurand.com/_autres/cover-milo_ios-github@2x.png" />
 </picture>
 
 # Milō iOS
