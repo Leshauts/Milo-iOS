@@ -1,6 +1,8 @@
 <picture>
-<img style="pointer-events:none" src="https://leodurand.com/_autres/cover-milo_ios-github@2x.png" />
+<img style="pointer-events:none" alt="cover-milo_ios-github@2x" src="https://github.com/user-attachments/assets/191b752e-98a0-4653-aefd-526dee7b954f" />
 </picture>
+
+
 
 # Milō iOS
 
