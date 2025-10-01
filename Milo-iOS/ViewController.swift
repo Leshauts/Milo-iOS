@@ -4,55 +4,197 @@ import WebKit
 class ViewController: UIViewController, WKNavigationDelegate {
 
     var webView: WKWebView!
+    var errorView: UIView!
+    var logoImageView: UIImageView!
+    var titleLabel: UILabel!
+    var messageLabel: UILabel!
+    
+    var connectivityTimer: Timer?
+    var initialErrorTimer: Timer?
+    var isConnected = false
 
     override func loadView() {
-        // Créer une vue parent avec fond gris clair
         let containerView = UIView()
         containerView.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 1.0)
         self.view = containerView
 
-        // Initialiser la WebView
+        // WebView - CHANGEMENTS ICI pour éviter le flickering
         webView = WKWebView()
         webView.navigationDelegate = self
-
-        // Fond WebView transparent pour laisser passer le fond de la vue
-        webView.backgroundColor = .clear
-        webView.isOpaque = false
-        webView.scrollView.backgroundColor = .clear
-
-        // Début invisible
+        webView.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 1.0) // ← Changé
+        webView.isOpaque = true // ← Changé
+        webView.scrollView.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 1.0) // ← Changé
         webView.alpha = 0.0
-
-        // Ajouter la WebView dans la vue parente
         containerView.addSubview(webView)
+        
+        setupErrorView()
+    }
+    
+    func setupErrorView() {
+        // Vue d'erreur - VISIBLE au démarrage (on la masquera si connexion OK)
+        errorView = UIView()
+        errorView.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 1.0)
+        errorView.alpha = 0.0 // Invisible mais pas hidden
+        errorView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(errorView)
+        
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.spacing = 0
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        errorView.addSubview(stackView)
+        
+        // Logo
+        logoImageView = UIImageView(image: UIImage(named: "Logo"))
+        logoImageView.contentMode = .scaleAspectFit
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.addArrangedSubview(logoImageView)
+        
+        // Spacer 64px
+        let spacer64 = UIView()
+        stackView.addArrangedSubview(spacer64)
+        
+        // Titre
+        titleLabel = UILabel()
+        titleLabel.text = "Milo n'est pas disponible"
+        titleLabel.textAlignment = .center
+        titleLabel.font = UIFont(name: "NeueMontreal-Medium", size: 18) ?? .systemFont(ofSize: 18, weight: .medium)
+        titleLabel.textColor = UIColor(red: 0x76/255.0, green: 0x7C/255.0, blue: 0x76/255.0, alpha: 1.0)
+        stackView.addArrangedSubview(titleLabel)
+        
+        // Spacer 8px
+        let spacer8 = UIView()
+        stackView.addArrangedSubview(spacer8)
+        
+        // Message
+        messageLabel = UILabel()
+        messageLabel.text = "Assurez-vous d'être connecté sur le même réseau local."
+        messageLabel.textAlignment = .center
+        messageLabel.numberOfLines = 0
+        messageLabel.font = UIFont(name: "NeueMontreal-Medium", size: 16) ?? .systemFont(ofSize: 16, weight: .medium)
+        messageLabel.textColor = UIColor(red: 0xA6/255.0, green: 0xAC/255.0, blue: 0xA6/255.0, alpha: 1.0)
+        stackView.addArrangedSubview(messageLabel)
+        
+        NSLayoutConstraint.activate([
+            errorView.topAnchor.constraint(equalTo: view.topAnchor),
+            errorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            errorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            errorView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            stackView.centerXAnchor.constraint(equalTo: errorView.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: errorView.centerYAnchor),
+            stackView.leadingAnchor.constraint(greaterThanOrEqualTo: errorView.leadingAnchor, constant: 40),
+            stackView.trailingAnchor.constraint(lessThanOrEqualTo: errorView.trailingAnchor, constant: -40),
+            
+            logoImageView.widthAnchor.constraint(equalToConstant: 86),
+            logoImageView.heightAnchor.constraint(equalToConstant: 48),
+            spacer64.heightAnchor.constraint(equalToConstant: 64),
+            spacer8.heightAnchor.constraint(equalToConstant: 8)
+        ])
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         webView.scrollView.contentInsetAdjustmentBehavior = .never
         webView.customUserAgent = "Milo-iOS-App/1.0"
-
-        // Charger l'URL (après affichage pour éviter le lag)
-        DispatchQueue.main.async {
-            let url = URL(string: "http://milo.local")!
-            self.webView.load(URLRequest(url: url))
+        
+        // Essayer de se connecter immédiatement
+        tryConnectToMilo()
+        
+        // Afficher le message d'erreur après 2.5 secondes si pas connecté
+        initialErrorTimer = Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) { [weak self] _ in
+            if self?.isConnected != true {
+                // Afficher la vue d'erreur avec animation
+                UIView.animate(withDuration: 0.3) {
+                    self?.errorView.alpha = 1.0
+                }
+            }
+        }
+        
+        // Démarrer le monitoring
+        startConnectivityCheck()
+    }
+    
+    func tryConnectToMilo() {
+        let url = URL(string: "http://milo.local")!
+        webView.load(URLRequest(url: url))
+    }
+    
+    func startConnectivityCheck() {
+        // Timer pour vérifier milo.local toutes les 4 secondes
+        connectivityTimer = Timer.scheduledTimer(withTimeInterval: 4.0, repeats: true) { [weak self] _ in
+            self?.checkMiloAndConnect()
+        }
+    }
+    
+    func checkMiloAndConnect() {
+        guard let url = URL(string: "http://milo.local") else { return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "HEAD"
+        request.timeoutInterval = 2.0
+        request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+        
+        URLSession.shared.dataTask(with: request) { [weak self] _, response, error in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                let isAvailable = error == nil && (response as? HTTPURLResponse)?.statusCode == 200
+                
+                if isAvailable && !self.isConnected {
+                    // milo.local disponible et on n'est pas connecté → se connecter
+                    self.tryConnectToMilo()
+                } else if !isAvailable && self.isConnected {
+                    // milo.local pas disponible mais on était connecté → afficher erreur
+                    self.isConnected = false
+                    self.showErrorView()
+                }
+            }
+        }.resume()
+    }
+    
+    func showErrorView() {
+        // Afficher la vue d'erreur avec animation
+        UIView.animate(withDuration: 0.3) {
+            self.errorView.alpha = 1.0
+            self.webView.alpha = 0.0
+        }
+    }
+    
+    func hideErrorView() {
+        // Masquer la vue d'erreur et afficher la webview
+        UIView.animate(withDuration: 0.3) {
+            self.errorView.alpha = 0.0
+            self.webView.alpha = 1.0
         }
     }
 
+    // MARK: - WKNavigationDelegate
+    
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        // Ajouter une classe CSS
-        let script = "document.body.classList.add('ios-app');"
-        webView.evaluateJavaScript(script, completionHandler: nil)
-
-        // Animation de fondu
-        UIView.animate(withDuration: 0.3) {
-            webView.alpha = 1.0
-        }
+        isConnected = true
+        
+        // Annuler le timer d'erreur initial (connexion réussie)
+        initialErrorTimer?.invalidate()
+        
+        // Ajouter classe CSS
+        webView.evaluateJavaScript("document.body.classList.add('ios-app');", completionHandler: nil)
+        
+        // Masquer l'erreur et afficher la webview
+        hideErrorView()
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        // Connexion échouée - garder la vue d'erreur visible
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         webView.frame = view.bounds
+    }
+    
+    deinit {
+        connectivityTimer?.invalidate()
+        initialErrorTimer?.invalidate()
     }
 }
